@@ -1,0 +1,38 @@
+{
+    "name": "marcfowler/oauth2-quaderno",
+    "description": "quaderno OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "authorization",
+        "authentication",
+        "idp",
+        "identity",
+        "sso",
+        "single sign on",
+        "quaderno"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Fowler",
+            "email": "marc@webactix.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "league/oauth2-client": "^2.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "marcfowler\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "marcfowler\\OAuth2\\Client\\Test\\": "test/src/"
+        }
+    }
+}
