@@ -82,6 +82,25 @@ class Quaderno extends AbstractProvider
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if ($response->getStatusCode() >= 400) {
+            if(isset($data['errors'])) {
+                $error_string = array();
+                foreach($data['errors'] as $k => $v) {
+                    if(is_array($v)) {
+                        $error_string[] = "{$k}: " . implode(', ', $v);
+                    } else {
+                        $error_string[] = "{$k}: {$v}";
+                    }
+                }
+                $error_string = implode('. ', $error_string);
+
+                throw new IdentityProviderException(
+                    $error_string ?: $response->getReasonPhrase(),
+                    $response->getStatusCode(),
+                    $response
+                );
+                return;
+            }
+
             throw new IdentityProviderException(
                 $data['error'] ?: $response->getReasonPhrase(),
                 $response->getStatusCode(),
