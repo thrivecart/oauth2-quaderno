@@ -1,5 +1,5 @@
 {
-    "name": "marcfowler/oauth2-quaderno",
+    "name": "tcdev/oauth2-quaderno",
     "description": "quaderno OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
     "keywords": [
         "oauth",
